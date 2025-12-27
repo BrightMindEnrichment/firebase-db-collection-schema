@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Metrics",
+  "description": "Schema for a document in the 'Metrics' collection. Each document represents the metrics of StreetCare at a specific time. For displaying on the homepage, always use the latest metrics.",
+  "type": "object",
+  "properties": {
+    "TimeStamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The timestamp of when the metrics were recorded."
+    },
+    "HomelessPeopleAided": {
+      "type": "integer"
+    },
+    "TotalVolunteers": {
+      "type": "integer"
+    },
+    "ItemsShared": {
+      "type": "integer"
+    },
+    "PeopleMentored": {
+      "type": "integer"
+    },
+    "TotalOutreach": {
+      "type": "integer"
+    },
+    "ChapterMembers": {
+      "type": "integer"
+    }
+  }
+}

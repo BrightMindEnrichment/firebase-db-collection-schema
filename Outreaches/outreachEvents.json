@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OutreachEvent",
+  "description": "Schema for a document in the 'OutreachEvent' collection. Represents a scheduled volunteering event or drive. | This schema is not verified, and only generated based on data, use carefully and verify and remove this.",
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string",
+      "description": "The User ID (UID) of the organizer who created the event."
+    },
+    "title": {
+      "type": "string",
+      "description": "The public title of the outreach event."
+    },
+    "description": {
+      "type": "string",
+      "description": "A detailed description of the event's purpose and activities."
+    },
+    "helpType": {
+      "type": "string",
+      "description": "The category of help being provided (e.g., 'Counselling and Mentoring')."
+    },
+    "status": {
+      "type": "string",
+      "description": "The current status of the event (e.g., 'approved').",
+      "default": "Pending"
+    },
+    "approved": {
+      "type": "boolean",
+      "description": "Boolean flag indicating if the event has been officially approved."
+    },
+    "conscentStatus": {
+      "type": "boolean",
+      "description": "Indicates if consent requirements have been met (specifics depend on business logic)."
+    },
+    "isFlagged": {
+      "type": "boolean",
+      "description": "Indicates if the event has been flagged for review.",
+      "default": false
+    },
+    "flaggedByUser": {
+      "type": ["string", "null"],
+      "description": "The ID of the user who flagged the event, if applicable."
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "timestamp",
+      "description": "The timestamp when the event was created. Represents a Firestore Timestamp."
+    },
+    "eventDate": {
+      "type": "string",
+      "format": "timestamp",
+      "description": "The general date of the event. Represents a Firestore Timestamp."
+    },
+    "eventStartTime": {
+      "type": "string",
+      "format": "timestamp",
+      "description": "The specific start time of the event. Represents a Firestore Timestamp."
+    },
+    "eventEndTime": {
+      "type": "string",
+      "format": "timestamp",
+      "description": "The specific end time of the event. Represents a Firestore Timestamp."
+    },
+    "totalSlots": {
+      "type": "integer",
+      "description": "The maximum number of volunteer slots available."
+    },
+    "interests": {
+      "type": "integer",
+      "description": "A counter tracking how many users have expressed interest in the event."
+    },
+    "location": {
+      "type": "object",
+      "description": "The physical location where the outreach event will take place.",
+      "properties": {
+        "street": { "type": "string" },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "stateAbbv": { "type": "string", "description": "Two-letter state abbreviation (e.g., 'NY')." },
+        "zipcode": { "type": "string" }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "description": "A list of skills required for the event (e.g., 'Counseling and Support').",
+      "items": {
+        "type": "string"
+      }
+    },
+    "participants": {
+      "type": "array",
+      "description": "A list of users who have signed up/participated. (Assumed to be User IDs based on standard patterns).",
+      "items": {
+        "type": "string"
+      }
+    },
+    "helpRequest": {
+      "type": "array",
+      "description": "A list of associated HelpRequest IDs linked to this outreach event.",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -115,8 +115,9 @@
     },
     "status": {
       "type": "string",
-      "description": "Denotes the current status of approval for the interaction log.",
-      "default": "Pending"
+      "description": "Denotes the current status of approval for the interaction log. | Valid options: pending, approved, rejected",
+      "default": "pending",
+      "comments": "THIS IS A COMMENT IN JSON: Rename reject in status to reject-with-reason, on the basis of: every reject will go for editing (and edits are possible until a predefined time, if we decide to slide that in.)"
     },
     "lastModifiedTimestamp": {
       "type": "string",
@@ -126,8 +127,9 @@
     },
     "lastActionPerformed": {
       "type": "string",
-      "description": "ToDo: define what actions are to be considered to track, that aren't tracked by status. Eg: Edited, Re-edited.",
-      "default": null
+      "description": "A verbose field of status. | Valid options: accept, reject, reject-with-reason, edit, and submit",
+      "default": null,
+      "comments": "THIS IS A COMMENT IN JSON: Rename reject in status to reject-with-reason, on the basis of: every reject will go for editing (and edits are possible until a predefined time, if we decide to slide that in.)"
     }
   }
 }

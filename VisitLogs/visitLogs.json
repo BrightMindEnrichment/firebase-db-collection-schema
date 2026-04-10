@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "visitLogs",
+  "description": "Schema for a document in the 'visitLogs' collection. Legacy collection for early volunteer visit log submissions (circa 2020).",
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string",
+      "description": "The Firebase Auth UID of the volunteer who submitted this log."
+    },
+    "timeStamp": {
+      "type": "string",
+      "format": "timestamp",
+      "description": "The timestamp when the log was submitted. Represents a Firestore Timestamp."
+    },
+    "Date": {
+      "type": "string",
+      "description": "Date of the visit as a formatted string (e.g., '10/8/2020')."
+    },
+    "Hours": {
+      "type": "string",
+      "description": "Number of hours spent on the visit."
+    },
+    "City": {
+      "type": "string",
+      "description": "City where the visit took place."
+    },
+    "State": {
+      "type": "string",
+      "description": "State where the visit took place."
+    },
+    "Name": {
+      "type": "string",
+      "description": "Name of the volunteer (legacy field, free text)."
+    },
+    "Contact": {
+      "type": "string",
+      "description": "Contact information of the volunteer (legacy field, free text)."
+    },
+    "Visit_Again": {
+      "type": "string",
+      "description": "Whether the volunteer would visit again (e.g., 'Yes', 'No')."
+    },
+    "Number_Of_People_Helped": {
+      "type": "string",
+      "description": "Number of people helped (stored as string in legacy data)."
+    },
+    "Number_Of_People_Joined": {
+      "type": "string",
+      "description": "Number of people who joined the volunteer (stored as string)."
+    },
+    "What_Given": {
+      "type": "string",
+      "description": "Free-text description of what was distributed or provided."
+    },
+    "Support_To_Go_Again": {
+      "type": "string",
+      "description": "What support would help the volunteer go again."
+    },
+    "Inspire": {
+      "type": "string",
+      "description": "What inspired the volunteer to participate."
+    },
+    "Question": {
+      "type": "string",
+      "description": "Any questions or comments from the volunteer."
+    }
+  }
+}

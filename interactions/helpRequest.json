@@ -14,7 +14,8 @@
     },
     "lastName": {
       "type": "string",
-      "description": "The last name of the person receiving help. Internal use only, private."
+      "description": "The last name of the person receiving help. Internal use only, private.",
+      "mask": true
     },
     "locationLandmark": {
       "type": "string",
@@ -81,6 +82,11 @@
       "type": "boolean",
       "description": "Once marked complete, the help request should no longer show up in the default search listings.",
       "default": false
+    },
+    "rejectReason": {
+      "type": "string",
+      "description": "The reason provided by the admin for rejecting this help request.",
+      "default": null
     }
   }
 }

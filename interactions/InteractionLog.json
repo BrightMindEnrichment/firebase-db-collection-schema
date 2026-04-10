@@ -18,19 +18,22 @@
     },
     "lastName": {
       "type": "string",
-      "description": "The last name of the person who volunteeted (for internal use only, not public)."
+      "description": "The last name of the person who volunteeted (for internal use only, not public).",
+      "mask": true
     },
     "email": {
       "type": "string",
       "format": "email",
-      "description": "The email address of the person who volunteeted."
+      "description": "The email address of the person who volunteeted.",
+      "mask": true
     },
     "phoneNumber": {
       "type": "string",
       "description": "The 10-digit phone number without any formatting of the person who volunteered.",
-      "pattern": "^[0-9]{10}$"
+      "pattern": "^[0-9]{10}$",
+      "mask": true
     },
-    "interactionDate":{
+    "interactionDate": {
       "type": "string",
       "format": "date",
       "description": "The day/date of the interaction"
@@ -130,6 +133,11 @@
       "description": "A verbose field of status. | Valid options: accept, reject, reject-with-reason, edit, and submit",
       "default": null,
       "comments": "THIS IS A COMMENT IN JSON: Rename reject in status to reject-with-reason, on the basis of: every reject will go for editing (and edits are possible until a predefined time, if we decide to slide that in.)"
+    },
+    "rejectReason": {
+      "type": "string",
+      "description": "The reason provided by the admin for rejecting this interaction log.",
+      "default": null
     }
   }
 }

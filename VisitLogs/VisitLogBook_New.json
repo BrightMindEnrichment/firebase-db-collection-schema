@@ -1,0 +1,153 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VisitLogBook_New",
+  "description": "Schema for a document in the 'VisitLogBook_New' collection. Records a volunteer's outreach visit log (current iOS/Android version with expanded fields).",
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string",
+      "description": "The Firebase Auth UID of the volunteer who created this log."
+    },
+    "timeStamp": {
+      "type": "string",
+      "format": "timestamp",
+      "description": "The timestamp when the log was created. Represents a Firestore Timestamp."
+    },
+    "whenVisit": {
+      "type": "string",
+      "format": "timestamp",
+      "description": "The date/time of the outreach visit. Represents a Firestore Timestamp."
+    },
+    "lastEdited": {
+      "type": "string",
+      "format": "timestamp",
+      "description": "The timestamp when the log was last edited. Represents a Firestore Timestamp."
+    },
+    "followUpWhenVisit": {
+      "type": ["string", "null"],
+      "format": "timestamp",
+      "description": "Scheduled follow-up visit date/time. Represents a Firestore Timestamp."
+    },
+    "whereVisit": {
+      "type": "string",
+      "description": "Description of where the outreach visit took place."
+    },
+    "locationDescription": {
+      "type": "string",
+      "description": "Additional free-text description of the visit location."
+    },
+    "type": {
+      "type": "string",
+      "description": "The platform used to submit the log (e.g., 'iOS', 'Android')."
+    },
+    "status": {
+      "type": "string",
+      "description": "Approval status of the log. Valid options: pending, approved, rejected.",
+      "default": "pending"
+    },
+    "isPublic": {
+      "type": "boolean",
+      "description": "Whether this log is publicly visible.",
+      "default": false
+    },
+    "isFlagged": {
+      "type": "boolean",
+      "description": "Whether this log has been flagged for review.",
+      "default": false
+    },
+    "flaggedByUser": {
+      "type": "string",
+      "description": "UID of the user who flagged this log, if applicable."
+    },
+    "peopleHelped": {
+      "type": "integer",
+      "description": "Number of people helped during the visit.",
+      "minimum": 0
+    },
+    "peopleHelpedDescription": {
+      "type": "string",
+      "description": "Free-text description of the people helped."
+    },
+    "numberOfHelpers": {
+      "type": "integer",
+      "description": "Number of volunteers who participated.",
+      "minimum": 0
+    },
+    "numberOfHelpersComment": {
+      "type": "string",
+      "description": "Free-text comment about the helpers."
+    },
+    "peopleNeedFurtherHelp": {
+      "type": "integer",
+      "description": "Number of people identified as needing further help.",
+      "minimum": 0
+    },
+    "peopleNeedFurtherHelpComment": {
+      "type": "string",
+      "description": "Free-text comment about people needing further help."
+    },
+    "peopleNeedFurtherHelpLocation": {
+      "type": "string",
+      "description": "Location of people who need further help."
+    },
+    "rating": {
+      "type": "integer",
+      "description": "Volunteer's self-reported rating of the visit.",
+      "minimum": 0
+    },
+    "ratingNotes": {
+      "type": "string",
+      "description": "Free-text notes accompanying the rating."
+    },
+    "otherNotes": {
+      "type": "string",
+      "description": "General free-text notes about the visit."
+    },
+    "futureNotes": {
+      "type": "string",
+      "description": "Notes about future plans or follow-ups."
+    },
+    "volunteerAgain": {
+      "type": "string",
+      "description": "Whether the volunteer would go again."
+    },
+    "itemQty": {
+      "type": "integer",
+      "description": "Quantity of items distributed.",
+      "minimum": 0
+    },
+    "itemQtyDescription": {
+      "type": "string",
+      "description": "Description of the items distributed."
+    },
+    "whatGiven": {
+      "type": "array",
+      "description": "List of support categories provided.",
+      "items": { "type": "string" }
+    },
+    "whatGivenFurther": {
+      "type": "array",
+      "description": "List of additional support categories provided.",
+      "items": { "type": "string" }
+    },
+    "clothes": { "type": "boolean" },
+    "foodAndDrinks": { "type": "boolean" },
+    "hygiene": { "type": "boolean" },
+    "legal": { "type": "boolean" },
+    "medical": { "type": "boolean" },
+    "social": { "type": "boolean" },
+    "wellness": { "type": "boolean" },
+    "other": { "type": "boolean" },
+    "furtherClothes": { "type": "boolean" },
+    "furtherFoodAndDrinks": { "type": "boolean" },
+    "furtherHygiene": { "type": "boolean" },
+    "furtherLegal": { "type": "boolean" },
+    "furtherMedical": { "type": "boolean" },
+    "furtherSocial": { "type": "boolean" },
+    "furtherWellness": { "type": "boolean" },
+    "furtherOther": { "type": "boolean" },
+    "furtherOtherNotes": { "type": "string", "description": "Free-text notes about further help provided." },
+    "durationHours": { "type": "integer", "minimum": -1, "description": "-1 indicates not set." },
+    "durationMinutes": { "type": "integer", "minimum": -1, "description": "-1 indicates not set." }
+  }
+}

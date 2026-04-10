@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "personalVisitLog",
+  "description": "Schema for a document in the 'personalVisitLog' collection. Records a personal outreach event created by a volunteer.",
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string",
+      "description": "The Firebase Auth UID of the volunteer who created this log."
+    },
+    "dateTime": {
+      "type": "string",
+      "format": "timestamp",
+      "description": "The date and time of the outreach event. Represents a Firestore Timestamp."
+    },
+    "description": {
+      "type": "string",
+      "description": "Free-text description of the outreach activity."
+    },
+    "numberPeopleHelped": {
+      "type": ["string", "integer"],
+      "description": "Number of people helped during the visit."
+    },
+    "whatGiven": {
+      "type": "array",
+      "description": "List of support categories provided.",
+      "items": { "type": "string" }
+    },
+    "itemQty": {
+      "type": ["string", "integer"],
+      "description": "Quantity of items distributed."
+    },
+    "street": {
+      "type": "string",
+      "description": "Street address of the outreach location."
+    },
+    "city": {
+      "type": "string",
+      "description": "City of the outreach location."
+    },
+    "state": {
+      "type": "string",
+      "description": "State of the outreach location."
+    },
+    "stateAbbv": {
+      "type": "string",
+      "description": "Two-letter state abbreviation of the outreach location."
+    },
+    "zipcode": {
+      "type": "string",
+      "description": "ZIP code of the outreach location."
+    },
+    "Location": {
+      "type": "object",
+      "description": "GPS coordinates of the outreach location.",
+      "properties": {
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" }
+      }
+    },
+    "rating": {
+      "type": ["string", "integer"],
+      "description": "Volunteer's self-reported rating of the visit."
+    },
+    "public": {
+      "type": "boolean",
+      "description": "Whether this log is publicly visible."
+    },
+    "isFlagged": {
+      "type": "boolean",
+      "description": "Whether this log has been flagged for review.",
+      "default": false
+    },
+    "flaggedByUser": {
+      "type": "string",
+      "description": "UID of the user who flagged this log, if applicable."
+    },
+    "approved": {
+      "type": "boolean",
+      "description": "Whether this log has been approved."
+    },
+    "status": {
+      "type": "string",
+      "description": "Approval status. Valid options: pending, approved, rejected.",
+      "default": "pending"
+    }
+  }
+}

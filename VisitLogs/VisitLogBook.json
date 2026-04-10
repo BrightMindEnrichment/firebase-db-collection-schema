@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VisitLogBook",
+  "description": "Schema for a document in the 'VisitLogBook' collection. Records a volunteer's outreach visit log (earlier iOS/Android version).",
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string",
+      "description": "The Firebase Auth UID of the volunteer who created this log."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "timestamp",
+      "description": "The timestamp when the log was created. Represents a Firestore Timestamp."
+    },
+    "whenVisit": {
+      "type": "string",
+      "format": "timestamp",
+      "description": "The date/time of the outreach visit. Represents a Firestore Timestamp."
+    },
+    "whereVisit": {
+      "type": "string",
+      "description": "Description of where the outreach visit took place."
+    },
+    "durationHours": {
+      "type": "integer",
+      "description": "Duration of the visit in hours.",
+      "minimum": 0
+    },
+    "durationMinutes": {
+      "type": "integer",
+      "description": "Duration of the visit in minutes (0–59).",
+      "minimum": 0,
+      "maximum": 59
+    },
+    "peopleHelped": {
+      "type": "integer",
+      "description": "Number of people helped during the visit.",
+      "minimum": 0
+    },
+    "numberOfHelpers": {
+      "type": "integer",
+      "description": "Number of volunteers who participated.",
+      "minimum": 0
+    },
+    "rating": {
+      "type": "integer",
+      "description": "Volunteer's self-reported rating of the visit (1–5).",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "ratingNotes": {
+      "type": "string",
+      "description": "Free-text notes accompanying the rating."
+    },
+    "otherNotes": {
+      "type": "string",
+      "description": "General free-text notes about the visit."
+    },
+    "volunteerAgain": {
+      "type": "integer",
+      "description": "Indicates if the volunteer would go again (0 = no, 1 = yes)."
+    },
+    "clothes": {
+      "type": "boolean",
+      "description": "Whether clothing was distributed."
+    },
+    "foodAndDrinks": {
+      "type": "boolean",
+      "description": "Whether food and drinks were distributed."
+    },
+    "wellness": {
+      "type": "boolean",
+      "description": "Whether wellness support was provided."
+    },
+    "hygine": {
+      "type": "boolean",
+      "description": "Whether hygiene items were distributed. (Note: field name has a typo in the app.)"
+    },
+    "other": {
+      "type": "boolean",
+      "description": "Whether other types of support were provided."
+    }
+  }
+}

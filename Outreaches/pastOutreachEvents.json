@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "pastOutreachEvents",
+  "description": "Schema for a document in the 'pastOutreachEvents' collection. Archived outreach events (same structure as outreachEvents).",
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string",
+      "description": "The Firebase Auth UID of the organizer who created the event."
+    },
+    "title": {
+      "type": "string",
+      "description": "The public title of the outreach event."
+    },
+    "description": {
+      "type": "string",
+      "description": "A detailed description of the event's purpose and activities."
+    },
+    "helpType": {
+      "type": "string",
+      "description": "The category of help being provided."
+    },
+    "status": {
+      "type": "string",
+      "description": "The current status of the event.",
+      "default": "pending"
+    },
+    "approved": {
+      "type": "boolean",
+      "description": "Whether the event has been officially approved."
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "timestamp",
+      "description": "The timestamp when the event was created. Represents a Firestore Timestamp."
+    },
+    "eventDate": {
+      "type": "string",
+      "format": "timestamp",
+      "description": "The general date of the event. Represents a Firestore Timestamp."
+    },
+    "eventStartTime": {
+      "type": "string",
+      "format": "timestamp",
+      "description": "The specific start time of the event. Represents a Firestore Timestamp."
+    },
+    "eventEndTime": {
+      "type": "string",
+      "format": "timestamp",
+      "description": "The specific end time of the event. Represents a Firestore Timestamp."
+    },
+    "totalSlots": {
+      "type": "integer",
+      "description": "The maximum number of volunteer slots available."
+    },
+    "interests": {
+      "type": "integer",
+      "description": "Counter tracking how many users have expressed interest."
+    },
+    "participants": {
+      "type": "array",
+      "description": "List of UIDs of users who signed up or participated.",
+      "items": { "type": "string" }
+    },
+    "skills": {
+      "type": "array",
+      "description": "List of skills required for the event.",
+      "items": { "type": "string" }
+    },
+    "location": {
+      "type": "object",
+      "description": "The physical location where the event will take place.",
+      "properties": {
+        "street": { "type": "string" },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "zipcode": { "type": "string" }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "visitLog",
+  "description": "Schema for a document in the 'visitLog' collection. Records a volunteer's outreach visit (web version).",
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string",
+      "description": "The Firebase Auth UID of the volunteer who created this log."
+    },
+    "whenVisit": {
+      "type": "string",
+      "description": "Date and time of the visit as a formatted string (e.g., '5/16/2023 3:23:51')."
+    },
+    "whereVisit": {
+      "type": "string",
+      "description": "Description of where the outreach visit took place."
+    },
+    "otherNotes": {
+      "type": "string",
+      "description": "General free-text notes about the visit."
+    },
+    "numberPeopleHelped": {
+      "type": "integer",
+      "description": "Number of people helped during the visit.",
+      "minimum": 0
+    },
+    "numberPeopleJoined": {
+      "type": "integer",
+      "description": "Number of people who joined the volunteer.",
+      "minimum": 0
+    },
+    "rating": {
+      "type": "string",
+      "description": "Volunteer's self-reported rating (stored as emoji stars string, e.g., '⭐️⭐️')."
+    },
+    "whatGiven": {
+      "type": "array",
+      "description": "List of support categories provided.",
+      "items": { "type": "string" }
+    },
+    "timeOutreach": {
+      "type": "number",
+      "description": "Duration of the outreach in hours.",
+      "minimum": 0
+    },
+    "volunteerAgain": {
+      "type": "string",
+      "description": "Whether the volunteer would go again."
+    }
+  }
+}

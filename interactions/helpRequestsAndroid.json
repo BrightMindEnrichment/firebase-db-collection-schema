@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "helpRequestsAndroid",
+  "description": "Schema for a document in the 'helpRequestsAndroid' collection. Help requests submitted via the Android app, identifying people in need of outreach.",
+  "type": "object",
+  "properties": {
+    "uid": {
+      "type": "string",
+      "description": "The Firebase Auth UID of the user who submitted this help request."
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "timestamp",
+      "description": "The timestamp when the help request was created. Represents a Firestore Timestamp."
+    },
+    "title": {
+      "type": "string",
+      "description": "A short title summarizing the help request."
+    },
+    "description": {
+      "type": "string",
+      "description": "Free-text description of the person in need and their situation."
+    },
+    "identification": {
+      "type": "string",
+      "description": "Physical description or identifying information of the person in need."
+    },
+    "status": {
+      "type": "string",
+      "description": "Current status of the help request (e.g., 'Need Help', 'In Progress', 'Resolved')."
+    },
+    "skills": {
+      "type": "array",
+      "description": "List of skill categories needed to address this request.",
+      "items": { "type": "string" }
+    },
+    "outreachEvent": {
+      "type": "array",
+      "description": "List of outreach event IDs associated with this help request.",
+      "items": { "type": "string" }
+    },
+    "location": {
+      "type": "object",
+      "description": "Location where the person in need is located.",
+      "properties": {
+        "street": { "type": "string" },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "zipcode": { "type": "string" }
+      }
+    }
+  }
+}
